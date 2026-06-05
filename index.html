@@ -1,1 +1,324 @@
-pbpaste > ~/Desktop/ai-practitioner-exam.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+  background: #f9f9f9;
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.5;
+  color: #111;
+}
+
+h1 { font-size: 22px; margin-bottom: 4px; }
+
+.subtitle { color: #666; font-size: 13px; margin-bottom: 8px; }
+
+.exam-info {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #444;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.exam-info span { font-weight: 600; color: #111; }
+
+.domain-section { margin-bottom: 32px; }
+
+.domain-header {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.dh1 { background: #2563eb; }
+.dh2 { background: #7c3aed; }
+.dh3 { background: #0891b2; }
+.dh4 { background: #059669; }
+.dh5 { background: #dc2626; }
+
+.q {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+}
+
+.qt {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.opts label {
+  display: block;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.opts label:hover {
+  background: #f0f7ff;
+  border-color: #0066cc;
+}
+
+details {
+  margin-top: 10px;
+}
+
+summary {
+  font-size: 12px;
+  color: #0066cc;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.ans {
+  margin-top: 8px;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 13px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.qnum {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 6px;
+}
+</style>
+</head>
+<body>
+
+<h1>AWS Certified AI Practitioner (AIF-C01)</h1>
+<p class="subtitle">Full-Length Practice Exam — 85 Questions</p>
+
+<div class="exam-info">
+  <div>Questions: <span>85</span></div>
+  <div>Time: <span>120 minutes</span></div>
+  <div>Passing: <span>700/1000</span></div>
+  <div>Format: <span>Multiple choice</span></div>
+</div>
+
+<!-- DOMAIN 1 -->
+<div class="domain-section">
+<div class="domain-header dh1">Domain 1: Fundamentals of AI and ML (20%) — 17 Questions</div>
+
+<div class="q"><div class="qnum">Q1</div><div class="qt">Which type of machine learning uses labeled input-output pairs during training?</div><div class="opts"><label>A. Unsupervised learning</label><label>B. Supervised learning</label><label>C. Reinforcement learning</label><label>D. Semi-supervised learning</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Supervised learning.</strong> Supervised learning trains models on labeled data where both inputs and correct outputs are provided, enabling the model to learn the mapping function.</div></details></div>
+
+<div class="q"><div class="qnum">Q2</div><div class="qt">A model performs well on training data but poorly on unseen data. What is this called?</div><div class="opts"><label>A. Underfitting</label><label>B. Overfitting</label><label>C. Regularization</label><label>D. Feature engineering</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Overfitting.</strong> The model memorized training noise instead of learning generalizable patterns. Techniques like regularization, dropout, and early stopping help prevent this.</div></details></div>
+
+<div class="q"><div class="qnum">Q3</div><div class="qt">Which metric is BEST suited for evaluating a binary classification model when the dataset has severe class imbalance?</div><div class="opts"><label>A. Accuracy</label><label>B. F1 Score</label><label>C. Mean Squared Error</label><label>D. R-squared</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. F1 Score.</strong> F1 balances precision and recall, making it more informative than accuracy when one class vastly outnumbers the other.</div></details></div>
+
+<div class="q"><div class="qnum">Q4</div><div class="qt">Which AWS service provides pre-trained APIs for common ML tasks like text analysis, translation, and image recognition without requiring ML expertise?</div><div class="opts"><label>A. Amazon SageMaker</label><label>B. AWS AI Services (Comprehend, Translate, Rekognition)</label><label>C. Amazon Bedrock</label><label>D. AWS Glue</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. AWS AI Services.</strong> Services like Comprehend (NLP), Translate (language), Rekognition (vision), and Polly (speech) provide ready-to-use APIs that require no ML expertise.</div></details></div>
+
+<div class="q"><div class="qnum">Q5</div><div class="qt">What is the purpose of a validation dataset in the ML pipeline?</div><div class="opts"><label>A. To train the model parameters</label><label>B. To tune hyperparameters and prevent overfitting during training</label><label>C. To provide the final performance evaluation</label><label>D. To augment the training data</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. To tune hyperparameters and prevent overfitting during training.</strong> The validation set provides an unbiased evaluation during training to guide model selection. The test set is reserved for final evaluation.</div></details></div>
+
+<div class="q"><div class="qnum">Q6</div><div class="qt">A retail company wants to group customers by purchasing behavior without predefined categories. Which ML approach is most appropriate?</div><div class="opts"><label>A. Classification</label><label>B. Regression</label><label>C. Clustering</label><label>D. Reinforcement learning</label></div><details><summary>Show Answer</summary><div class="ans"><strong>C. Clustering.</strong> Clustering is an unsupervised technique that groups data points by similarity without requiring predefined labels. K-means and DBSCAN are common algorithms.</div></details></div>
+
+<div class="q"><div class="qnum">Q7</div><div class="qt">Which of the following describes the concept of "inference" in machine learning?</div><div class="opts"><label>A. The process of training a model on data</label><label>B. Using a trained model to make predictions on new data</label><label>C. Selecting features for model training</label><label>D. Evaluating model performance on test data</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Using a trained model to make predictions on new data.</strong> Inference is the production phase where the trained model processes new inputs and generates outputs.</div></details></div>
+
+<div class="q"><div class="qnum">Q8</div><div class="qt">What is the primary difference between AI, machine learning, and deep learning?</div><div class="opts"><label>A. They are different names for the same technology</label><label>B. AI is the broadest concept; ML is a subset of AI; deep learning is a subset of ML</label><label>C. Deep learning is the broadest; AI is the narrowest</label><label>D. ML requires labeled data; AI and deep learning do not</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. AI is the broadest concept; ML is a subset of AI; deep learning is a subset of ML.</strong> AI encompasses any machine mimicking intelligence. ML achieves this through learning from data. Deep learning uses neural networks with multiple layers.</div></details></div>
+
+<div class="q"><div class="qnum">Q9</div><div class="qt">Which technique helps reduce the number of input features while preserving the most important information?</div><div class="opts"><label>A. Data augmentation</label><label>B. Dimensionality reduction</label><label>C. Batch normalization</label><label>D. Gradient descent</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Dimensionality reduction.</strong> Techniques like PCA reduce feature count while retaining the variance that matters most, improving model performance and reducing computation.</div></details></div>
+
+<div class="q"><div class="qnum">Q10</div><div class="qt">A model that is too simple to capture the underlying patterns in the data suffers from:</div><div class="opts"><label>A. High variance</label><label>B. High bias (underfitting)</label><label>C. Overfitting</label><label>D. Data leakage</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. High bias (underfitting).</strong> An underfit model makes strong assumptions that oversimplify the data, resulting in poor performance on both training and test sets.</div></details></div>
+
+<div class="q"><div class="qnum">Q11</div><div class="qt">Which AWS service allows you to build, train, and deploy custom ML models with full control over the pipeline?</div><div class="opts"><label>A. Amazon Comprehend</label><label>B. Amazon SageMaker</label><label>C. Amazon Bedrock</label><label>D. Amazon Personalize</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Amazon SageMaker.</strong> SageMaker provides a fully managed environment for the entire ML lifecycle: data preparation, training, tuning, deployment, and monitoring.</div></details></div>
+
+<div class="q"><div class="qnum">Q12</div><div class="qt">What is "feature engineering" in machine learning?</div><div class="opts"><label>A. Selecting the ML algorithm</label><label>B. Creating, transforming, or selecting input variables to improve model performance</label><label>C. Deploying models to production</label><label>D. Monitoring model accuracy over time</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Creating, transforming, or selecting input variables to improve model performance.</strong> Feature engineering transforms raw data into meaningful inputs like extracting day-of-week from timestamps or normalizing scales.</div></details></div>
+
+<div class="q"><div class="qnum">Q13</div><div class="qt">A company wants to predict house prices based on square footage, location, and age. Which ML task type is this?</div><div class="opts"><label>A. Classification</label><label>B. Regression</label><label>C. Clustering</label><label>D. Anomaly detection</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Regression.</strong> Predicting a continuous numerical value (price) from input features is a regression task.</div></details></div>
+
+<div class="q"><div class="qnum">Q14</div><div class="qt">What is "model drift" and why does it matter?</div><div class="opts"><label>A. When a model's predictions become faster over time</label><label>B. When the statistical properties of input data change, degrading model performance</label><label>C. When training data is corrupted</label><label>D. When a model is deployed to multiple regions</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. When the statistical properties of input data change, degrading model performance.</strong> Real-world data evolves. Continuous monitoring and retraining are essential.</div></details></div>
+
+<div class="q"><div class="qnum">Q15</div><div class="qt">Which of the following is an example of reinforcement learning?</div><div class="opts"><label>A. Classifying emails as spam or not spam</label><label>B. Grouping customers by purchase history</label><label>C. Training a robot to navigate a maze through trial-and-error rewards</label><label>D. Predicting tomorrow's stock price</label></div><details><summary>Show Answer</summary><div class="ans"><strong>C. Training a robot to navigate a maze through trial-and-error rewards.</strong> Reinforcement learning uses an agent that learns optimal actions by interacting with an environment and receiving reward/penalty signals.</div></details></div>
+
+<div class="q"><div class="qnum">Q16</div><div class="qt">What does the "precision" metric measure in classification?</div><div class="opts"><label>A. The proportion of actual positives correctly identified</label><label>B. The proportion of predicted positives that are actually positive</label><label>C. The overall accuracy of all predictions</label><label>D. The area under the ROC curve</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. The proportion of predicted positives that are actually positive.</strong> Precision = TP/(TP+FP). High precision means few false alarms.</div></details></div>
+
+<div class="q"><div class="qnum">Q17</div><div class="qt">Which AWS service uses ML to provide personalized product recommendations?</div><div class="opts"><label>A. Amazon Forecast</label><label>B. Amazon Personalize</label><label>C. Amazon Textract</label><label>D. Amazon Kendra</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Amazon Personalize.</strong> Personalize uses the same technology as Amazon.com to generate real-time recommendations without requiring ML expertise.</div></details></div>
+
+</div>
+
+<!-- DOMAIN 2 -->
+<div class="domain-section">
+<div class="domain-header dh2">Domain 2: Fundamentals of Generative AI (24%) — 20 Questions</div>
+
+<div class="q"><div class="qnum">Q18</div><div class="qt">What is the primary architecture used by modern large language models?</div><div class="opts"><label>A. Recurrent Neural Network (RNN)</label><label>B. Convolutional Neural Network (CNN)</label><label>C. Transformer</label><label>D. Generative Adversarial Network (GAN)</label></div><details><summary>Show Answer</summary><div class="ans"><strong>C. Transformer.</strong> The Transformer architecture uses self-attention mechanisms to process entire sequences in parallel, enabling efficient training on massive datasets.</div></details></div>
+
+<div class="q"><div class="qnum">Q19</div><div class="qt">What is a "foundation model"?</div><div class="opts"><label>A. A model trained on a single specific task</label><label>B. A large model trained on broad data that can be adapted to many downstream tasks</label><label>C. The first version of any ML model</label><label>D. A model that only works with structured data</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. A large model trained on broad data that can be adapted to many downstream tasks.</strong> Foundation models learn general representations from massive datasets and can be fine-tuned or prompted for specific applications.</div></details></div>
+
+<div class="q"><div class="qnum">Q20</div><div class="qt">What is "tokenization" in the context of LLMs?</div><div class="opts"><label>A. Encrypting sensitive data</label><label>B. Breaking text into smaller units (tokens) that the model processes</label><label>C. Validating user authentication</label><label>D. Compressing model weights</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Breaking text into smaller units (tokens) that the model processes.</strong> Most LLMs use subword tokenization (like BPE) to balance vocabulary size with representation efficiency.</div></details></div>
+
+<div class="q"><div class="qnum">Q21</div><div class="qt">What is an "embedding" in AI?</div><div class="opts"><label>A. A compressed version of a model</label><label>B. A dense numerical vector that represents the meaning of text, images, or other data</label><label>C. A type of database index</label><label>D. A training hyperparameter</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. A dense numerical vector that represents the meaning of text, images, or other data.</strong> Embeddings capture semantic relationships: similar concepts have vectors close together in the embedding space.</div></details></div>
+
+<div class="q"><div class="qnum">Q22</div><div class="qt">What is "hallucination" in the context of generative AI?</div><div class="opts"><label>A. When a model generates content that is factually incorrect or fabricated but presented as true</label><label>B. When a model fails to generate any output</label><label>C. When a model produces identical outputs for different inputs</label><label>D. When a model runs out of memory</label></div><details><summary>Show Answer</summary><div class="ans"><strong>A. When a model generates content that is factually incorrect or fabricated but presented as true.</strong> Mitigation strategies include RAG, grounding, temperature reduction, and human review.</div></details></div>
+
+<div class="q"><div class="qnum">Q23</div><div class="qt">Which training approach teaches a foundation model on vast unlabeled text data to predict the next token?</div><div class="opts"><label>A. Supervised fine-tuning</label><label>B. Reinforcement learning from human feedback (RLHF)</label><label>C. Self-supervised pre-training</label><label>D. Transfer learning</label></div><details><summary>Show Answer</summary><div class="ans"><strong>C. Self-supervised pre-training.</strong> The model learns language patterns by predicting masked or next tokens in massive text corpora. No human labels needed.</div></details></div>
+
+<div class="q"><div class="qnum">Q24</div><div class="qt">What is the "attention mechanism" in Transformers?</div><div class="opts"><label>A. A technique to reduce model size</label><label>B. A mechanism that lets the model weigh the importance of different parts of the input when generating each output token</label><label>C. A method for data preprocessing</label><label>D. A regularization technique</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. A mechanism that lets the model weigh the importance of different parts of the input when generating each output token.</strong> Self-attention computes relevance scores between all positions in a sequence.</div></details></div>
+
+<div class="q"><div class="qnum">Q25</div><div class="qt">What is "prompt engineering"?</div><div class="opts"><label>A. Training a new model from scratch</label><label>B. Crafting input text to guide a model's behavior and improve output quality</label><label>C. Building the model's neural network architecture</label><label>D. Optimizing model inference speed</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Crafting input text to guide a model's behavior and improve output quality.</strong> Techniques include zero-shot, few-shot examples, chain-of-thought reasoning, and system prompts.</div></details></div>
+
+<div class="q"><div class="qnum">Q26</div><div class="qt">What distinguishes "few-shot" prompting from "zero-shot" prompting?</div><div class="opts"><label>A. Few-shot uses more compute resources</label><label>B. Few-shot includes examples in the prompt; zero-shot provides only the task instruction</label><label>C. Zero-shot is more accurate</label><label>D. Few-shot requires model retraining</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Few-shot includes examples in the prompt; zero-shot provides only the task instruction.</strong> Few-shot demonstrates desired format/behavior through examples without parameter updates.</div></details></div>
+
+<div class="q"><div class="qnum">Q27</div><div class="qt">What is "fine-tuning" a foundation model?</div><div class="opts"><label>A. Adjusting inference parameters like temperature</label><label>B. Further training a pre-trained model on a smaller, task-specific dataset to adapt its behavior</label><label>C. Reducing the model's size for deployment</label><label>D. Adding more layers to the architecture</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Further training a pre-trained model on a smaller, task-specific dataset to adapt its behavior.</strong> Fine-tuning updates model weights to specialize in a domain or task with less data and compute than training from scratch.</div></details></div>
+
+<div class="q"><div class="qnum">Q28</div><div class="qt">What is a "diffusion model" in generative AI?</div><div class="opts"><label>A. A model that generates images by iteratively removing noise from a random input</label><label>B. A model that spreads information across a network</label><label>C. A model for time series forecasting</label><label>D. A model that diffuses compute across GPUs</label></div><details><summary>Show Answer</summary><div class="ans"><strong>A. A model that generates images by iteratively removing noise from a random input.</strong> Diffusion models learn to reverse a noise-adding process, gradually transforming random noise into coherent images guided by text prompts.</div></details></div>
+
+<div class="q"><div class="qnum">Q29</div><div class="qt">What is RLHF (Reinforcement Learning from Human Feedback)?</div><div class="opts"><label>A. Training models using only human-labeled datasets</label><label>B. A technique that uses human preference rankings to align model outputs with human values</label><label>C. A method for humans to directly control model inference</label><label>D. A feedback loop where humans manually correct each output</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. A technique that uses human preference rankings to align model outputs with human values.</strong> RLHF trains a reward model from human comparisons, then uses RL to optimize the LLM against that reward model.</div></details></div>
+
+<div class="q"><div class="qnum">Q30</div><div class="qt">What is a "multimodal" foundation model?</div><div class="opts"><label>A. A model deployed across multiple AWS regions</label><label>B. A model that can process and generate multiple types of data (text, images, audio, video)</label><label>C. A model with multiple training phases</label><label>D. A model that runs on multiple GPUs</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. A model that can process and generate multiple types of data (text, images, audio, video).</strong> Multimodal models can understand images alongside text, enabling visual Q&A, document analysis, and image captioning.</div></details></div>
+
+<div class="q"><div class="qnum">Q31</div><div class="qt">What is the "context window" of an LLM?</div><div class="opts"><label>A. The time it takes to generate a response</label><label>B. The maximum number of tokens (input + output) the model can process in a single request</label><label>C. The training dataset size</label><label>D. The number of model parameters</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. The maximum number of tokens (input + output) the model can process in a single request.</strong> Context windows range from 4K to 200K+ tokens. Larger windows allow processing longer documents but increase compute costs.</div></details></div>
+
+<div class="q"><div class="qnum">Q32</div><div class="qt">What is "chain-of-thought" prompting?</div><div class="opts"><label>A. Connecting multiple models in sequence</label><label>B. Instructing the model to reason step-by-step before giving a final answer</label><label>C. Training a model on sequential data</label><label>D. Chaining API calls together</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Instructing the model to reason step-by-step before giving a final answer.</strong> Chain-of-thought significantly improves performance on math, logic, and multi-step reasoning tasks.</div></details></div>
+
+<div class="q"><div class="qnum">Q33</div><div class="qt">What is "model distillation"?</div><div class="opts"><label>A. Removing sensitive data from training</label><label>B. Training a smaller "student" model to replicate the behavior of a larger "teacher" model</label><label>C. Splitting a model across multiple servers</label><label>D. Converting a model to a different programming language</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Training a smaller "student" model to replicate the behavior of a larger "teacher" model.</strong> Distillation transfers knowledge into smaller, faster, cheaper models while retaining much of the original performance.</div></details></div>
+
+<div class="q"><div class="qnum">Q34</div><div class="qt">Which of the following is NOT a typical use case for generative AI?</div><div class="opts"><label>A. Summarizing documents</label><label>B. Generating marketing copy</label><label>C. Sorting a database table by column values</label><label>D. Writing code from natural language descriptions</label></div><details><summary>Show Answer</summary><div class="ans"><strong>C. Sorting a database table by column values.</strong> Sorting is a deterministic operation handled by traditional algorithms. Generative AI excels at creative, analytical, and language tasks.</div></details></div>
+
+<div class="q"><div class="qnum">Q35</div><div class="qt">What is "transfer learning"?</div><div class="opts"><label>A. Moving a model from one cloud provider to another</label><label>B. Applying knowledge learned from one task to improve performance on a different but related task</label><label>C. Transferring data between databases</label><label>D. Copying model weights to a backup</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Applying knowledge learned from one task to improve performance on a different but related task.</strong> Foundation models are the ultimate transfer learning: pre-trained on general text, then adapted to specific domains.</div></details></div>
+
+<div class="q"><div class="qnum">Q36</div><div class="qt">What is a "latent space" in generative models?</div><div class="opts"><label>A. Unused GPU memory</label><label>B. A compressed, learned representation of data where similar items are close together</label><label>C. The space between neural network layers</label><label>D. Storage for model checkpoints</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. A compressed, learned representation of data where similar items are close together.</strong> In latent space, high-dimensional data is mapped to lower-dimensional vectors that capture semantic meaning.</div></details></div>
+
+<div class="q"><div class="qnum">Q37</div><div class="qt">What is the key advantage of the Transformer's self-attention over RNNs for sequence processing?</div><div class="opts"><label>A. Transformers use less memory</label><label>B. Transformers can process all positions in parallel rather than sequentially</label><label>C. Transformers require less training data</label><label>D. Transformers never overfit</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Transformers can process all positions in parallel rather than sequentially.</strong> RNNs process tokens one at a time. Transformers compute attention across all positions simultaneously, enabling massive parallelization.</div></details></div>
+
+</div>
+
+<!-- DOMAIN 3 -->
+<div class="domain-section">
+<div class="domain-header dh3">Domain 3: Applications of Foundation Models (28%) — 24 Questions</div>
+
+<div class="q"><div class="qnum">Q38</div><div class="qt">Which AWS service provides serverless access to multiple foundation models through a unified API?</div><div class="opts"><label>A. Amazon SageMaker</label><label>B. Amazon Bedrock</label><label>C. Amazon Comprehend</label><label>D. AWS Lambda</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Amazon Bedrock.</strong> Bedrock provides serverless API access to foundation models from Anthropic, Meta, Cohere, AI21 Labs, Stability AI, and Amazon.</div></details></div>
+
+<div class="q"><div class="qnum">Q39</div><div class="qt">What is Retrieval-Augmented Generation (RAG)?</div><div class="opts"><label>A. A technique that retrieves relevant documents from a knowledge base and provides them as context to the model at inference time</label><label>B. A method to generate training data automatically</label><label>C. A way to retrieve previously cached model outputs</label><label>D. A backup system for model weights</label></div><details><summary>Show Answer</summary><div class="ans"><strong>A. A technique that retrieves relevant documents and provides them as context at inference time.</strong> RAG grounds model responses in source data, reducing hallucinations and enabling access to current information without retraining.</div></details></div>
+
+<div class="q"><div class="qnum">Q40</div><div class="qt">A company needs their chatbot to answer questions using proprietary internal documents. Which Amazon Bedrock feature enables this?</div><div class="opts"><label>A. Model fine-tuning</label><label>B. Knowledge Bases for Amazon Bedrock</label><label>C. Amazon Bedrock Guardrails</label><label>D. Amazon Bedrock Agents</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Knowledge Bases for Amazon Bedrock.</strong> This feature implements RAG by automatically chunking, embedding, and indexing your documents, then retrieving relevant passages at query time.</div></details></div>
+
+<div class="q"><div class="qnum">Q41</div><div class="qt">What does the "temperature" parameter control in LLM inference?</div><div class="opts"><label>A. The speed of token generation</label><label>B. The randomness/creativity of the output</label><label>C. The maximum output length</label><label>D. The model's memory usage</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. The randomness/creativity of the output.</strong> Low temperature (0.1-0.3) produces focused, deterministic responses. High temperature (0.7-1.0) increases diversity and creativity.</div></details></div>
+
+<div class="q"><div class="qnum">Q42</div><div class="qt">What are "Amazon Bedrock Agents"?</div><div class="opts"><label>A. Human reviewers who evaluate model outputs</label><label>B. Autonomous AI systems that can plan, execute multi-step tasks, and invoke APIs/tools on behalf of users</label><label>C. Automated security scanners</label><label>D. A deployment automation service</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Autonomous AI systems that can plan, execute multi-step tasks, and invoke APIs/tools on behalf of users.</strong> Agents break down requests into steps, determine which tools to call, and synthesize results.</div></details></div>
+
+<div class="q"><div class="qnum">Q43</div><div class="qt">When should you use fine-tuning instead of RAG?</div><div class="opts"><label>A. When you need the model to access real-time data</label><label>B. When you want to change the model's style, tone, or behavior patterns rather than add new knowledge</label><label>C. When you have unlimited budget</label><label>D. When you want to avoid using any training data</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. When you want to change the model's style, tone, or behavior patterns rather than add new knowledge.</strong> Fine-tuning adapts how the model responds. RAG adds what the model knows.</div></details></div>
+
+<div class="q"><div class="qnum">Q44</div><div class="qt">What does "top-p" (nucleus sampling) control?</div><div class="opts"><label>A. The number of parameters in the model</label><label>B. The cumulative probability threshold for token selection</label><label>C. The number of prompt tokens</label><label>D. The batch size for inference</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. The cumulative probability threshold for token selection.</strong> Top-p=0.9 means the model considers the minimum set of tokens whose combined probability is 90%.</div></details></div>
+
+<div class="q"><div class="qnum">Q45</div><div class="qt">A customer service team wants to automatically categorize support tickets by urgency. Which approach is MOST cost-effective?</div><div class="opts"><label>A. Train a custom foundation model from scratch</label><label>B. Use Amazon Comprehend custom classification</label><label>C. Use Amazon Bedrock with a fine-tuned model</label><label>D. Build a rule-based system with no ML</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Amazon Comprehend custom classification.</strong> For straightforward text classification, Comprehend provides a cost-effective purpose-built solution. Foundation models are overkill for simple classification.</div></details></div>
+
+<div class="q"><div class="qnum">Q46</div><div class="qt">What is "model selection" in the context of Amazon Bedrock?</div><div class="opts"><label>A. Choosing which AWS region to deploy in</label><label>B. Evaluating and choosing the right foundation model based on task requirements, quality, speed, and cost</label><label>C. Selecting training data</label><label>D. Picking the number of GPUs</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Evaluating and choosing the right foundation model based on task requirements, quality, speed, and cost.</strong> Different models excel at different tasks. Model evaluation helps compare performance.</div></details></div>
+
+<div class="q"><div class="qnum">Q47</div><div class="qt">What is the purpose of a "system prompt" in LLM interactions?</div><div class="opts"><label>A. To debug system errors</label><label>B. To define the model's persona, constraints, and behavioral instructions that persist across the conversation</label><label>C. To configure server hardware</label><label>D. To encrypt the conversation</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. To define the model's persona, constraints, and behavioral instructions.</strong> System prompts set the model's role, define output format, restrict topics, and establish guardrails.</div></details></div>
+
+<div class="q"><div class="qnum">Q48</div><div class="qt">A media company wants to generate product images from text descriptions. Which AWS service is most appropriate?</div><div class="opts"><label>A. Amazon Rekognition</label><label>B. Amazon Bedrock with Stability AI models</label><label>C. Amazon Textract</label><label>D. Amazon Polly</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Amazon Bedrock with Stability AI models.</strong> Stability AI's image generation models available through Bedrock create images from text prompts and edit existing images.</div></details></div>
+
+<div class="q"><div class="qnum">Q49</div><div class="qt">What is "prompt injection"?</div><div class="opts"><label>A. Adding more training data to a model</label><label>B. A security attack where malicious instructions are embedded in user input to override the model's intended behavior</label><label>C. Injecting prompts into a database</label><label>D. A technique for faster inference</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. A security attack where malicious instructions override the model's intended behavior.</strong> Mitigations include input validation, guardrails, and output filtering.</div></details></div>
+
+<div class="q"><div class="qnum">Q50</div><div class="qt">What is "semantic search" and how does it differ from keyword search?</div><div class="opts"><label>A. They are identical</label><label>B. Semantic search uses embeddings to find results based on meaning similarity, not exact word matches</label><label>C. Semantic search only works with structured data</label><label>D. Keyword search is always more accurate</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Semantic search uses embeddings to find results based on meaning similarity.</strong> "How do I return a product?" matches "refund policy" in semantic search because the meanings are related.</div></details></div>
+
+<div class="q"><div class="qnum">Q51</div><div class="qt">Which is a key benefit of Amazon Bedrock over self-hosting open-source models?</div><div class="opts"><label>A. Lower model quality</label><label>B. No infrastructure management, automatic scaling, and pay-per-use pricing</label><label>C. Access to only one model provider</label><label>D. Required long-term contracts</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. No infrastructure management, automatic scaling, and pay-per-use pricing.</strong> Bedrock eliminates GPU provisioning, scaling, patching, and capacity planning.</div></details></div>
+
+<div class="q"><div class="qnum">Q52</div><div class="qt">A legal firm wants to summarize 100-page contracts. What should they consider about model selection?</div><div class="opts"><label>A. Only the model's speed</label><label>B. The model's context window size must accommodate the full document</label><label>C. The model's image generation capabilities</label><label>D. The model's training date only</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. The model's context window size must accommodate the full document.</strong> A 100-page contract may require 50K-100K+ tokens. Models with small context windows cannot process it in one pass.</div></details></div>
+
+<div class="q"><div class="qnum">Q53</div><div class="qt">What is the role of a "vector database" in a RAG architecture?</div><div class="opts"><label>A. Storing model weights</label><label>B. Storing document embeddings and enabling fast similarity search</label><label>C. Running SQL queries on structured data</label><label>D. Caching API responses</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Storing document embeddings and enabling fast similarity search.</strong> Vector databases index embeddings and efficiently find the most semantically similar documents to a query.</div></details></div>
+
+<div class="q"><div class="qnum">Q54</div><div class="qt">What is "chunking" in the context of RAG?</div><div class="opts"><label>A. Compressing model files</label><label>B. Splitting large documents into smaller segments for embedding and retrieval</label><label>C. Dividing GPU memory across models</label><label>D. Breaking API calls into batches</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Splitting large documents into smaller segments for embedding and retrieval.</strong> Chunk size affects quality. Too large: diluted relevance. Too small: lost context. Typical sizes: 256-1024 tokens with overlap.</div></details></div>
+
+<div class="q"><div class="qnum">Q55</div><div class="qt">A company wants their AI assistant to book meetings and query databases. Which Bedrock feature enables this?</div><div class="opts"><label>A. Knowledge Bases</label><label>B. Guardrails</label><label>C. Agents with action groups</label><label>D. Model evaluation</label></div><details><summary>Show Answer</summary><div class="ans"><strong>C. Agents with action groups.</strong> Action groups define available tools (APIs) the agent can call to fulfill user requests like booking meetings or querying databases.</div></details></div>
+
+<div class="q"><div class="qnum">Q56</div><div class="qt">What is "max tokens" in model inference?</div><div class="opts"><label>A. The maximum model size</label><label>B. The limit on output length the model will generate in a single response</label><label>C. The maximum training dataset size</label><label>D. The number of API calls per minute</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. The limit on output length the model will generate.</strong> The model stops when it hits this limit or produces a stop token. Controls cost and prevents runaway generation.</div></details></div>
+
+<div class="q"><div class="qnum">Q57</div><div class="qt">When is it appropriate to train a foundation model from scratch?</div><div class="opts"><label>A. For most business applications</label><label>B. Only when existing models cannot serve the use case, and you have massive compute and specialized data</label><label>C. Whenever the model makes a mistake</label><label>D. When budget is limited</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Only when existing models cannot serve the use case.</strong> Training from scratch costs millions and takes months. For 99% of use cases, prompting, RAG, or fine-tuning is more practical.</div></details></div>
+
+<div class="q"><div class="qnum">Q58</div><div class="qt">What is Amazon Titan?</div><div class="opts"><label>A. An AWS database service</label><label>B. Amazon's family of foundation models including text, embedding, and image models</label><label>C. A hardware accelerator chip</label><label>D. A container orchestration service</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Amazon's family of foundation models available through Bedrock.</strong> Titan includes text generation, embedding, and image generation models. Titan Embeddings is commonly used for RAG.</div></details></div>
+
+<div class="q"><div class="qnum">Q59</div><div class="qt">What is "model evaluation" in Amazon Bedrock?</div><div class="opts"><label>A. Evaluating compute costs</label><label>B. Comparing model outputs across different models using automated metrics or human evaluation</label><label>C. Evaluating server performance</label><label>D. Testing network connectivity</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Comparing model outputs using automated metrics or human evaluation.</strong> Bedrock supports ROUGE, BERTScore, and human evaluation workflows to select the best model for your use case.</div></details></div>
+
+<div class="q"><div class="qnum">Q60</div><div class="qt">A developer wants to generate code completions. Which factors matter MOST for model selection?</div><div class="opts"><label>A. Image generation quality</label><label>B. Code understanding, reasoning ability, and context window for large codebases</label><label>C. Audio processing speed</label><label>D. Number of supported human languages</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Code understanding, reasoning ability, and context window.</strong> Large context windows are critical for understanding multi-file codebases and generating contextually correct completions.</div></details></div>
+
+<div class="q"><div class="qnum">Q61</div><div class="qt">What is "Provisioned Throughput" in Amazon Bedrock?</div><div class="opts"><label>A. A free tier offering</label><label>B. Reserved model capacity that guarantees consistent performance for high-volume workloads</label><label>C. A data storage plan</label><label>D. A networking configuration</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Reserved model capacity that guarantees consistent performance.</strong> Provisioned Throughput provides dedicated model units, eliminating throttling for production workloads.</div></details></div>
+
+</div>
+
+<!-- DOMAIN 4 -->
+<div class="domain-section">
+<div class="domain-header dh4">Domain 4: Guidelines for Responsible AI (14%) — 12 Questions</div>
+
+<div class="q"><div class="qnum">Q62</div><div class="qt">A facial recognition system has lower accuracy for certain demographic groups. This is an example of:</div><div class="opts"><label>A. Model drift</label><label>B. Algorithmic bias</label><label>C. Data poisoning</label><label>D. Adversarial attack</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Algorithmic bias.</strong> Bias occurs when a system produces systematically unfair outcomes, often due to unrepresentative training data. Requires diverse datasets and fairness metrics.</div></details></div>
+
+<div class="q"><div class="qnum">Q63</div><div class="qt">Which AWS service helps filter harmful content and enforce responsible AI policies on model inputs and outputs?</div><div class="opts"><label>A. AWS WAF</label><label>B. Amazon Bedrock Guardrails</label><label>C. AWS Shield</label><label>D. Amazon Inspector</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Amazon Bedrock Guardrails.</strong> Guardrails provides content filters (hate, violence, sexual, misconduct), denied topic detection, PII redaction, and word filters.</div></details></div>
+
+<div class="q"><div class="qnum">Q64</div><div class="qt">What is "explainability" in AI?</div><div class="opts"><label>A. How fast a model explains concepts</label><label>B. The ability to understand and describe how a model arrived at a specific prediction</label><label>C. Documentation of source code</label><label>D. The model explaining its own architecture</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. The ability to understand how a model arrived at a prediction.</strong> Techniques include SHAP values, attention visualization, and feature importance ranking.</div></details></div>
+
+<div class="q"><div class="qnum">Q65</div><div class="qt">What is an "AI Service Card" from AWS?</div><div class="opts"><label>A. A credit card for AI services</label><label>B. Documentation providing transparency about an AI service's intended use cases, limitations, and responsible AI considerations</label><label>C. A hardware specification</label><label>D. An IAM credential</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Documentation providing transparency about intended use cases, limitations, and responsible AI considerations.</strong> AI Service Cards help customers understand appropriate use cases and known limitations.</div></details></div>
+
+<div class="q"><div class="qnum">Q66</div><div class="qt">A hiring AI consistently recommends male candidates over equally qualified female candidates. What is the likely root cause?</div><div class="opts"><label>A. The model is too large</label><label>B. Historical training data reflecting past hiring biases</label><label>C. The temperature is too high</label><label>D. The model has too few parameters</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Historical training data reflecting past hiring biases.</strong> If training data reflects discrimination, the model learns and perpetuates those patterns. Data curation and bias testing are essential.</div></details></div>
+
+<div class="q"><div class="qnum">Q67</div><div class="qt">What is the principle of "human-in-the-loop" in responsible AI?</div><div class="opts"><label>A. Requiring humans to write all AI code</label><label>B. Keeping humans involved in oversight and decision-making for high-stakes AI outputs</label><label>C. Having humans manually run inference</label><label>D. Training models only during business hours</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Keeping humans involved in oversight for high-stakes outputs.</strong> For consequential decisions (medical, legal, financial), human review provides a safety net against errors and bias.</div></details></div>
+
+<div class="q"><div class="qnum">Q68</div><div class="qt">How does Amazon Bedrock Guardrails handle PII?</div><div class="opts"><label>A. Ignores PII entirely</label><label>B. Detects and can redact or block PII in both model inputs and outputs</label><label>C. Only encrypts PII</label><label>D. Stores PII in a separate database</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Detects and can redact or block PII in both inputs and outputs.</strong> Guardrails identifies PII types (names, emails, SSNs) and either anonymizes or blocks the response entirely.</div></details></div>
+
+<div class="q"><div class="qnum">Q69</div><div class="qt">What is "AI transparency"?</div><div class="opts"><label>A. Making all source code open-source</label><label>B. Openly communicating how AI systems work, their limitations, and when AI is being used</label><label>C. Using transparent hardware</label><label>D. Removing all security</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Openly communicating how AI systems work, their limitations, and when AI is being used.</strong> Includes disclosing AI usage, documenting limitations, and providing clear opt-out mechanisms.</div></details></div>
+
+<div class="q"><div class="qnum">Q70</div><div class="qt">A company deploys AI for loan approvals. Which responsible AI practice is MOST critical?</div><div class="opts"><label>A. Maximizing approval speed</label><label>B. Ensuring fairness across protected classes, providing explanations for denials, and regular bias audits</label><label>C. Using the largest model</label><label>D. Minimizing compute costs</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Ensuring fairness, explanations, and bias audits.</strong> Financial decisions have legal requirements (ECOA, Fair Housing Act) around non-discrimination and adverse action explanations.</div></details></div>
+
+<div class="q"><div class="qnum">Q71</div><div class="qt">What is "data poisoning" in AI security?</div><div class="opts"><label>A. SQL injection</label><label>B. Intentionally introducing malicious examples into training data to manipulate model behavior</label><label>C. Running out of training data</label><label>D. Overfitting on clean data</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Intentionally introducing malicious examples into training data.</strong> An attacker injects biased or backdoored samples to make the model behave incorrectly on specific inputs.</div></details></div>
+
+<div class="q"><div class="qnum">Q72</div><div class="qt">What is the purpose of "denied topics" in Bedrock Guardrails?</div><div class="opts"><label>A. Blocking specific topics the model should never discuss, regardless of phrasing</label><label>B. Denying API access</label><label>C. Blocking network traffic</label><label>D. Preventing model updates</label></div><details><summary>Show Answer</summary><div class="ans"><strong>A. Blocking specific topics the model should never discuss.</strong> Define custom denied topics with natural language descriptions. The guardrail detects and blocks regardless of how the user phrases the request.</div></details></div>
+
+<div class="q"><div class="qnum">Q73</div><div class="qt">Which approach BEST mitigates hallucination?</div><div class="opts"><label>A. Increasing temperature to 1.0</label><label>B. Grounding responses in retrieved source documents (RAG) and requiring citations</label><label>C. Using a larger model</label><label>D. Removing all system prompts</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Grounding in source documents (RAG) and requiring citations.</strong> RAG provides factual context. Citations make hallucination detectable. Low temperature also helps.</div></details></div>
+
+</div>
+
+<!-- DOMAIN 5 -->
+<div class="domain-section">
+<div class="domain-header dh5">Domain 5: Security, Compliance, and Governance (14%) — 12 Questions</div>
+
+<div class="q"><div class="qnum">Q74</div><div class="qt">How does Amazon Bedrock handle customer data privacy by default?</div><div class="opts"><label>A. Customer data is shared across accounts</label><label>B. Customer inputs and outputs are not used to train or improve base foundation models</label><label>C. All data is stored indefinitely</label><label>D. Data is sent to third-party providers</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Customer data is not used to train base models.</strong> Your prompts and completions stay within your AWS account, encrypted in transit and at rest.</div></details></div>
+
+<div class="q"><div class="qnum">Q75</div><div class="qt">A company wants AI traffic to never traverse the public internet. Which AWS feature enables this?</div><div class="opts"><label>A. Internet Gateway</label><label>B. VPC endpoints (AWS PrivateLink)</label><label>C. NAT Gateway</label><label>D. CloudFront distribution</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. VPC endpoints (AWS PrivateLink).</strong> PrivateLink creates private connectivity between your VPC and Bedrock without traffic crossing the public internet.</div></details></div>
+
+<div class="q"><div class="qnum">Q76</div><div class="qt">Which service logs all Amazon Bedrock API calls for audit purposes?</div><div class="opts"><label>A. Amazon CloudWatch Logs</label><label>B. AWS CloudTrail</label><label>C. Amazon S3 access logs</label><label>D. VPC Flow Logs</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. AWS CloudTrail.</strong> CloudTrail records all Bedrock API calls including who, when, from where, and with which parameters. Essential for compliance.</div></details></div>
+
+<div class="q"><div class="qnum">Q77</div><div class="qt">How should you control which IAM principals can invoke specific foundation models?</div><div class="opts"><label>A. Network ACLs</label><label>B. IAM policies with bedrock:InvokeModel action and resource-level permissions specifying model ARNs</label><label>C. Security groups</label><label>D. S3 bucket policies</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. IAM policies with bedrock:InvokeModel and model ARNs.</strong> Restrict which users/roles can access specific models by specifying ARNs in IAM policy resource elements.</div></details></div>
+
+<div class="q"><div class="qnum">Q78</div><div class="qt">What encryption does Amazon Bedrock provide for data at rest?</div><div class="opts"><label>A. No encryption</label><label>B. AWS-managed keys by default, with option for customer-managed KMS keys</label><label>C. Only client-side encryption</label><label>D. Third-party encryption only</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. AWS-managed keys by default, with customer-managed KMS keys as an option.</strong> You can specify your own KMS keys for additional control and compliance requirements.</div></details></div>
+
+<div class="q"><div class="qnum">Q79</div><div class="qt">A healthcare company must ensure AI outputs comply with HIPAA. Which controls are MOST appropriate?</div><div class="opts"><label>A. Use the cheapest model</label><label>B. Guardrails for PII filtering, VPC endpoints, KMS encryption, CloudTrail logging, and BAA with AWS</label><label>C. Only use open-source models</label><label>D. Disable all logging</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Multiple layered controls.</strong> HIPAA requires: BAA with AWS, PII filtering via Guardrails, network isolation via PrivateLink, encryption via KMS, and audit logging via CloudTrail.</div></details></div>
+
+<div class="q"><div class="qnum">Q80</div><div class="qt">What is "model invocation logging" in Amazon Bedrock?</div><div class="opts"><label>A. Logging model training runs</label><label>B. Recording the full input prompts and output completions for each model call for auditing and debugging</label><label>C. Logging network latency</label><label>D. Recording GPU utilization</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Recording the full input prompts and output completions.</strong> Model invocation logging captures what was sent to and received from the model, stored in S3 or CloudWatch for compliance review.</div></details></div>
+
+<div class="q"><div class="qnum">Q81</div><div class="qt">How can you prevent sensitive data from being included in model prompts?</div><div class="opts"><label>A. Train the model to ignore sensitive data</label><label>B. Use Bedrock Guardrails PII filters on input, implement application-layer redaction before sending prompts</label><label>C. Increase the temperature parameter</label><label>D. Use a smaller model</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Guardrails PII filters on input plus application-layer redaction.</strong> Defense in depth: redact PII before it reaches the model, and configure Guardrails as a safety net to catch anything missed.</div></details></div>
+
+<div class="q"><div class="qnum">Q82</div><div class="qt">What is the Shared Responsibility Model for AI services like Bedrock?</div><div class="opts"><label>A. AWS handles everything</label><label>B. AWS secures the infrastructure and service; customers are responsible for data, access controls, prompt safety, and compliance</label><label>C. Customers handle all security</label><label>D. Third parties handle security</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. AWS secures infrastructure; customers handle data, access, and compliance.</strong> AWS manages the platform security. You manage IAM policies, data classification, guardrails configuration, and regulatory compliance.</div></details></div>
+
+<div class="q"><div class="qnum">Q83</div><div class="qt">A company wants to ensure only approved foundation models can be used. How should they enforce this?</div><div class="opts"><label>A. Verbal policy only</label><label>B. IAM policies that explicitly deny access to unapproved model ARNs using deny statements</label><label>C. Network firewalls</label><label>D. Employee training only</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. IAM deny policies on unapproved model ARNs.</strong> Service Control Policies (SCPs) or IAM policies with explicit deny statements prevent anyone from invoking unauthorized models, regardless of other permissions.</div></details></div>
+
+<div class="q"><div class="qnum">Q84</div><div class="qt">What role does AWS Config play in AI governance?</div><div class="opts"><label>A. Training models</label><label>B. Continuously evaluating resource configurations against compliance rules and detecting configuration changes</label><label>C. Generating model outputs</label><label>D. Managing model weights</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Evaluating configurations against compliance rules.</strong> AWS Config tracks changes to Bedrock resources, verifies compliance with organizational policies, and alerts on non-compliant configurations.</div></details></div>
+
+<div class="q"><div class="qnum">Q85</div><div class="qt">A financial services company needs to demonstrate to regulators that their AI system makes fair decisions. Which combination provides the strongest evidence?</div><div class="opts"><label>A. Only using the newest model</label><label>B. Bias testing reports, model invocation logs, explainability outputs, and regular third-party audits</label><label>C. Marketing materials about AI fairness</label><label>D. Employee surveys about AI trust</label></div><details><summary>Show Answer</summary><div class="ans"><strong>B. Bias testing, invocation logs, explainability, and audits.</strong> Regulators want evidence: documented testing across protected classes, audit trails of decisions, explanations for individual outcomes, and independent validation.</div></details></div>
+
+</div>
+
+</body>
+</html>
+
