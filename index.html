@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,109 +32,45 @@ h1{font-size:17px;margin-bottom:2px}
 .score h2{font-size:22px;margin-bottom:8px}
 .score .pct{font-size:48px;font-weight:700;color:#2563eb}
 .score .detail{font-size:13px;color:#555;margin-top:8px}
-.mt{font-size:12px;border-collapse:collapse;width:100%;margin-bottom:10px}
-.mt td,.mt th{padding:6px 8px;border:1px solid #e5e5e5;text-align:left}
-.mt th{background:#f9f9f9;font-weight:600}
+.loading{text-align:center;padding:40px;color:#666}
 </style>
 </head>
 <body>
 <h1>AWS AI Practitioner (AIF-C01)</h1>
-<p class="sub">65 Questions | Exam Guide v1.1 (Apr 2026)</p>
-<div class="bar"><span>Q <b id="qn">1</b>/65</span><span id="sc"></span><div class="prog"><div id="pb" style="width:1.5%"></div></div></div>
-<div id="area"></div>
+<p class="sub">Practice Exam | Exam Guide v1.1 (Apr 2026)</p>
+<div class="bar"><span>Q <b id="qn">1</b>/<span id="tot">0</span></span><span id="sc"></span><div class="prog"><div id="pb" style="width:0%"></div></div></div>
+<div id="area"><div class="loading">Loading questions...</div></div>
 <div class="nav"><button class="btn sec" id="prev" onclick="go(-1)">Back</button><button class="btn pri" id="next" onclick="go(1)">Next</button></div>
 <script>
-const Q=[
-{d:"Domain 1",q:"Which BEST describes the relationship between AI, ML, deep learning, and agentic AI?",o:["They are interchangeable terms","AI is broadest; ML learns from data; deep learning uses neural networks; agentic AI autonomously plans and executes multi-step tasks","Agentic AI is the broadest category","Deep learning contains all others"],a:1,e:"AI is the umbrella. ML learns patterns. Deep learning uses multi-layer neural networks. Agentic AI builds autonomous systems using tools and workflows."},
-{d:"Domain 1",q:"A company detects fraudulent transactions in real-time. Which inferencing type?",o:["Batch","Real-time","Asynchronous","Serverless"],a:1,e:"Real-time inferencing provides immediate low-latency predictions. Batch processes on schedule. Async queues for later."},
-{d:"Domain 1",q:"Which TWO scenarios indicate AI/ML is NOT appropriate? (Select TWO)",o:["Predict churn from historical behavior","Deterministic calculation for regulatory compliance","Classify tickets by urgency","Sort a table alphabetically","Generate recommendations"],a:[1,3],e:"AI/ML is wrong for deterministic calculations and simple rule-based logic like sorting."},
-{d:"Domain 1",q:"A healthcare company needs auditable, consistent explanations for high-risk patient flags. Which approach?",o:["LLM via Amazon Bedrock","Traditional ML (decision tree/logistic regression) via SageMaker AI","Diffusion model","Multi-agent system"],a:1,e:"When regulations require explainability and consistency, traditional ML models provide clear feature attribution."},
-{d:"Domain 1",q:"Which service covers the entire ML lifecycle from data prep through deployment and monitoring?",o:["Amazon Bedrock","Amazon SageMaker AI","Amazon Comprehend","Amazon Q"],a:1,e:"SageMaker AI provides end-to-end ML lifecycle. Bedrock = FM access. Comprehend = pre-trained NLP."},
-{d:"Domain 1",q:"Match: Transcribe=? Polly=? Textract=? Translate=?",o:["Transcribe=speech-to-text, Polly=text-to-speech, Textract=document extraction, Translate=language translation","Transcribe=text-to-speech, Polly=speech-to-text, Textract=translation, Translate=extraction","All four do the same thing","Transcribe=translation, Polly=extraction, Textract=speech, Translate=text-to-speech"],a:0,e:"Transcribe=speech-to-text. Polly=text-to-speech. Textract=extract text from documents. Translate=language translation."},
-{d:"Domain 1",q:"Which concept describes repeatable processes, technical debt management, and production readiness for ML?",o:["Feature engineering","MLOps","Hyperparameter tuning","Data augmentation"],a:1,e:"MLOps encompasses experimentation tracking, repeatable pipelines, monitoring, and re-training workflows."},
-{d:"Domain 1",q:"Model gets 95% on training data, 60% on new data. What is happening?",o:["Underfitting","Overfitting","Data leakage","Concept drift"],a:1,e:"Large gap between training/test = overfitting. Model memorized noise instead of learning patterns."},
-{d:"Domain 1",q:"Which metric minimizes false positives when they are extremely costly?",o:["Recall","Precision","Accuracy","MAE"],a:1,e:"Precision = TP/(TP+FP). Minimizes false positives. Recall minimizes false negatives."},
-{d:"Domain 1",q:"Cost per user, ROI, customer feedback, and development costs are examples of:",o:["Model performance metrics","Business metrics","Infrastructure metrics","Training metrics"],a:1,e:"Business metrics measure value. Model metrics (accuracy, F1) measure technical quality."},
-{d:"Domain 1",q:"Which learning type uses labeled input-output pairs?",o:["Unsupervised","Reinforcement","Supervised","Self-supervised"],a:2,e:"Supervised = labeled data. Unsupervised = no labels. Reinforcement = reward signals."},
-{d:"Domain 1",q:"Which AWS service is an AI assistant for coding, AWS questions, and business tasks?",o:["Amazon Kendra","Amazon Q","Amazon Lex","Amazon Personalize"],a:1,e:"Amazon Q = AI assistant. Kendra = enterprise search. Lex = conversational bots."},
-{d:"Domain 1",q:"Kiro is BEST described as:",o:["Vector database","AI-powered developer tool for building applications","Model training framework","Security scanner"],a:1,e:"Kiro is a developer tool listed under Developer Tools alongside Strands Agents and Amazon Q."},
-{d:"Domain 2",q:"What is Model Context Protocol (MCP)?",o:["Model weight compression","Protocol standardizing how AI agents connect to external systems and tools","Multi-GPU training technique","Encryption protocol for inputs"],a:1,e:"MCP standardizes agent-to-tool/data connections, enabling interoperability across frameworks."},
-{d:"Domain 2",q:"Which THREE are foundational agentic AI concepts? (Select THREE)",o:["Multi-agent communication patterns","Batch data processing","Memory management and tool usage","Static web rendering","Workflow orchestration","Database schema design"],a:[0,2,4],e:"Agentic AI: multi-agent patterns, MCP, memory management, tool usage, workflow orchestration."},
-{d:"Domain 2",q:"How does token-based pricing work for FMs?",o:["Fixed cost regardless of usage","Cost scales with input and output tokens; longer prompts/responses cost more","Only output tokens charged","Only applies to fine-tuned models"],a:1,e:"Charged per input token + per output token. Longer context = higher cost."},
-{d:"Domain 2",q:"What is context engineering in FM applications?",o:["Engineering model architecture","Strategically designing and managing info provided to a model to maximize output quality","Building training infrastructure","Monitoring production performance"],a:1,e:"Context engineering = prompt design + RAG strategy + memory management + relevance filtering."},
-{d:"Domain 2",q:"Transformer architecture's key innovation over RNNs?",o:["Uses less memory","Self-attention processes all positions in parallel","Eliminates training data need","Only processes text"],a:1,e:"Self-attention computes all position relationships simultaneously, enabling parallelization."},
-{d:"Domain 2",q:"Which GenAI disadvantage means same input can produce different outputs?",o:["Hallucination","Nondeterminism","Bias","Latency"],a:1,e:"Nondeterminism = probabilistic sampling produces varying outputs. Lower temperature reduces but doesn't eliminate."},
-{d:"Domain 2",q:"Business value metrics for GenAI include:",o:["ROUGE and BLEU","Cross-domain performance, ROI, efficiency, conversion rate, ARPU, customer lifetime value","Training loss","Parameter count"],a:1,e:"Business metrics: ROI, efficiency, conversion, ARPU, CLV. ROUGE/BLEU = model performance metrics."},
-{d:"Domain 2",q:"Match: Bedrock=? Strands Agents=? JumpStart=? AgentCore=?",o:["Bedrock=serverless FM API, Strands=agent framework, JumpStart=pre-built ML in SageMaker, AgentCore=security/identity for agents","All are the same service","Bedrock=training, Strands=storage, JumpStart=security, AgentCore=models","Bedrock=agents, Strands=models, JumpStart=security, AgentCore=training"],a:0,e:"Bedrock=FM access. Strands=build agents. JumpStart=pre-built models. AgentCore=agent security/identity/policy."},
-{d:"Domain 2",q:"What are embeddings?",o:["Hardware connections","Dense vectors representing semantic meaning where similar concepts are geometrically close","File attachments","Encrypted parameters"],a:1,e:"Embeddings map data into vector space. Semantic similarity = geometric proximity. Used for search, RAG, clustering."},
-{d:"Domain 2",q:"What is hallucination in GenAI?",o:["Slow response","Generating factually incorrect content presented as true","Refusing to answer","Blank output"],a:1,e:"Hallucinations = plausible but wrong. Mitigate with RAG grounding, output validation, confidence scoring."},
-{d:"Domain 2",q:"Correct FM lifecycle order?",o:["Data selection, Model selection, Pre-training, Fine-tuning, Deployment","Deployment, Training, Data, Model, Fine-tuning","Fine-tuning, Pre-training, Data, Model, Deploy","Model, Data, Deploy, Train, Fine-tune"],a:0,e:"Data selection > Model selection > Pre-training > Fine-tuning > Deployment > Evaluation > Feedback."},
-{d:"Domain 2",q:"Multi-agent system pattern means:",o:["Single model answers everything","Multiple specialized agents collaborate on subtasks and communicate to solve complex problems","Same model on multiple GPUs","Model generates multiple drafts"],a:1,e:"Specialized agents (researcher, coder, reviewer) coordinate to solve complex problems."},
-{d:"Domain 2",q:"AWS GenAI cost tradeoffs include:",o:["Only annual contracts","Token pricing, provisioned throughput, and custom models have different cost-performance profiles","All models same price","Only storage-based costs"],a:1,e:"On-demand tokens (pay per use) vs provisioned throughput (reserved capacity) vs custom models (higher upfront)."},
-{d:"Domain 2",q:"What is model distillation?",o:["Removing toxic data","Training smaller student model to replicate larger teacher model behavior","Splitting model across servers","Framework conversion"],a:1,e:"Distillation: large teacher > smaller student. Retains performance at lower cost/latency."},
-{d:"Domain 2",q:"Context window of an LLM means:",o:["The GUI","Maximum tokens (input+output) per request","Training time window","Number of parameters"],a:1,e:"Context window = max tokens per request. Larger window = longer documents but higher cost."},
-{d:"Domain 2",q:"Amazon Nova is:",o:["Vector database","Amazon's family of foundation models available through Bedrock","Agent framework","Monitoring service"],a:1,e:"Amazon Nova = Amazon's FM family accessible via Bedrock for text, multimodal tasks."},
-{d:"Domain 3",q:"Which THREE are FM selection criteria? (Select THREE)",o:["Input/output length and prompt caching","Developer's office location","Cost, latency, and model complexity","Multi-lingual support and modality","Documentation color"],a:[0,2,3],e:"FM criteria: cost, modality, latency, multi-lingual, size, complexity, customization, I/O length, prompt caching."},
-{d:"Domain 3",q:"Temperature parameter controls:",o:["Server CPU temp","Randomness/creativity of output; lower = more focused","Token generation speed","Max API calls"],a:1,e:"Low temp (0.1-0.3) = focused/deterministic. High (0.7-1.0) = creative. Zero = greedy decoding."},
-{d:"Domain 3",q:"Company needs chatbot answering from proprietary docs without retraining. Which approach?",o:["Increase temperature","RAG using Amazon Bedrock Knowledge Bases","Train from scratch","Larger context window"],a:1,e:"RAG retrieves docs and provides as context at inference. Bedrock Knowledge Bases automates the pipeline."},
-{d:"Domain 3",q:"Vector databases on AWS: OpenSearch=? Aurora=? Neptune=? RDS PostgreSQL=?",o:["OpenSearch=k-NN search, Aurora=pgvector high-perf, Neptune=graph+vectors, RDS=standard pgvector","All use the same engine","None support vectors","Only OpenSearch supports vectors"],a:0,e:"OpenSearch=k-NN plugin. Aurora=high-perf pgvector. Neptune=graph+vector. RDS PostgreSQL=standard pgvector."},
-{d:"Domain 3",q:"Rank FM customization from LEAST to MOST expensive:",o:["In-context learning, RAG, Fine-tuning, Pre-training from scratch","Pre-training, Fine-tuning, RAG, In-context learning","Fine-tuning, RAG, Pre-training, In-context learning","RAG, Pre-training, In-context learning, Fine-tuning"],a:0,e:"Prompting (free) < RAG (infra cost) < Fine-tuning (compute) < Pre-training (millions of dollars)."},
-{d:"Domain 3",q:"What is prompt caching?",o:["Browser cache for offline","Reusing computed token representations for repeated prefixes, reducing latency and cost","Caching weights locally","Storing queries in DB"],a:1,e:"Caches static prefix computations. Same prefix reappears = skip computation = lower latency + cost."},
-{d:"Domain 3",q:"What is a negative prompt?",o:["A prompt that errors","Instructions telling the model what NOT to include","Negative sentiment prompt","Performance-reducing prompt"],a:1,e:"Negative prompts tell model what to avoid. Common in image gen and content filtering."},
-{d:"Domain 3",q:"Which THREE are prompt engineering security risks? (Select THREE)",o:["Prompt injection","Prompt caching","Jailbreaking","Few-shot learning","Prompt hijacking"],a:[0,2,4],e:"Risks: injection (override instructions), jailbreaking (bypass safety), hijacking (redirect behavior). Also: exposure, poisoning."},
-{d:"Domain 3",q:"Amazon Bedrock Prompt Management is for:",o:["Account permissions","Creating, versioning, and managing prompt templates for consistent model interactions","Network config","Batch scheduling"],a:1,e:"Prompt Management: version prompts, A/B test, manage templates, ensure consistency."},
-{d:"Domain 3",q:"What is instruction tuning?",o:["Hardware tuning","Fine-tuning on instruction-response pairs to improve direction-following","Better docs","Adjusting inference params"],a:1,e:"Instruction tuning trains on (instruction, response) pairs to improve zero-shot instruction following."},
-{d:"Domain 3",q:"What is continuous pre-training?",o:["Never-ending training","Continuing training on domain-specific data without starting from scratch","Simultaneous multi-model training","Backup training"],a:1,e:"Extends FM knowledge with domain corpora (medical, legal) without full retraining cost."},
-{d:"Domain 3",q:"What is LLM-as-a-judge?",o:["Legal evaluation","Using a powerful LLM to evaluate and score another model's outputs","Courtroom AI","Self-grading"],a:1,e:"LLM-as-a-judge uses capable LLM to assess outputs on helpfulness, accuracy, relevance. Scales beyond human review."},
-{d:"Domain 3",q:"Which metric measures summary quality via n-gram overlap with reference text?",o:["BLEU","ROUGE","F1","Accuracy"],a:1,e:"ROUGE = summary quality (recall-oriented). BLEU = translation quality. BERTScore = semantic similarity."},
-{d:"Domain 3",q:"92% task completion but 60% user satisfaction indicates:",o:["Need more parameters","Model completes tasks but experience (tone, speed, clarity) doesn't meet expectations","Wrong measurement","Needs full retraining"],a:1,e:"High completion + low satisfaction = UX problem (tone, latency, clarity), not capability gap."},
-{d:"Domain 3",q:"When to fine-tune instead of RAG?",o:["Need real-time data","Want to change model's style/tone/behavior rather than add factual knowledge","Limited budget","Reduce hallucinations"],a:1,e:"Fine-tuning = change HOW model responds (style/tone). RAG = change WHAT it knows (add facts)."},
-{d:"Domain 3",q:"Amazon Bedrock Agents primarily:",o:["Train models","Autonomously plan and execute multi-step tasks by invoking tools and APIs","Store documents","Monitor infrastructure"],a:1,e:"Agents break requests into steps, call tools/APIs, and synthesize results autonomously."},
-{d:"Domain 3",q:"How to evaluate a RAG pipeline?",o:["Only training loss","Evaluate BOTH retrieval precision/recall AND generation faithfulness/relevance end-to-end","Only API call count","Only latency"],a:1,e:"RAG eval = retrieval quality (right docs found?) + generation quality (faithful to context?)."},
-{d:"Domain 3",q:"Chain-of-thought prompting means:",o:["Chaining API calls","Instructing model to reason step-by-step before final answer","Blockchain technique","Linking models"],a:1,e:"Shows reasoning steps before concluding. Improves math, logic, multi-step reasoning."},
-{d:"Domain 4",q:"Which THREE are legal risks of GenAI? (Select THREE)",o:["IP infringement claims","Faster response times","Loss of customer trust","Reduced costs","Biased outputs violating anti-discrimination laws"],a:[0,2,4],e:"Legal risks: IP infringement, customer trust loss, biased outputs, end user risk, hallucinations as fact."},
-{d:"Domain 4",q:"Environmental considerations in model selection means:",o:["Green UI themes","Considering energy/carbon footprint and choosing appropriately-sized models","Only hosting in regulated regions","Recycled hardware"],a:1,e:"Responsible = evaluate environmental impact. Bigger models = more energy. Choose appropriate size."},
-{d:"Domain 4",q:"Which service detects bias using SHAP values and explains predictions?",o:["Amazon Macie","Amazon SageMaker Clarify","AWS Config","Amazon Inspector"],a:1,e:"Clarify: bias detection, SHAP explanations, production monitoring for bias drift."},
-{d:"Domain 4",q:"What is Amazon A2I?",o:["Training accelerator","Human review workflows for ML predictions enabling human-in-the-loop oversight","Augmented reality","Data augmentation"],a:1,e:"A2I routes low-confidence or high-stakes predictions to human reviewers before action."},
-{d:"Domain 4",q:"SageMaker Model Cards are:",o:["Physical cards","Documentation of model's uses, limitations, training data, and ethical considerations for transparency","Credit cards","Study flash cards"],a:1,e:"Model Cards: intended use, limitations, training data, demographic performance, ethics. Supports governance."},
-{d:"Domain 4",q:"Amazon Bedrock Guardrails can:",o:["Train models","Filter harmful content, block denied topics, detect/redact PII in inputs and outputs","Provision EC2","Create VPC endpoints"],a:1,e:"Guardrails: content filters, denied topics, PII redaction, word filters, grounding checks on I/O."},
-{d:"Domain 4",q:"Tradeoff between transparency and performance:",o:["No tradeoff exists","Simpler interpretable models are easier to explain but may sacrifice accuracy vs complex models","Complex = more transparent","Only matters for images"],a:1,e:"Interpretable (decision tree) = transparent but less powerful. Complex (deep learning) = powerful but harder to explain."},
-{d:"Domain 4",q:"Hiring AI ranks males higher after training on 10 years of data. Root cause?",o:["Too many parameters","Historical data reflects past biases and model perpetuates them","Temperature too high","Context window too small"],a:1,e:"Biased training data = biased model. Fix: diverse datasets, bias testing across groups, human audits."},
-{d:"Domain 4",q:"User feedback mechanisms and disclosing AI interactions describe:",o:["Model distillation","Human-centered design for explainable AI","Feature engineering","Batch inferencing"],a:1,e:"Human-centered design: feedback mechanisms (thumbs up/down), AI decision transparency, disclosure of AI use."},
-{d:"Domain 5",q:"Amazon Bedrock AgentCore Identity is:",o:["Web auth service","Identity and access control specifically for AI agents and their resource access","User profile tool","Facial recognition"],a:1,e:"AgentCore Identity = agent-specific IAM. Policy in AgentCore defines agent actions and resource access."},
-{d:"Domain 5",q:"Which THREE are AI-specific security considerations? (Select THREE)",o:["Data leakage prevention","Database sharding","Output filtering and validation","Load balancer config","Toxicity detection"],a:[0,2,4],e:"AI security: data leakage prevention, output filtering/validation, toxicity detection, prompt injection defense, audit logging."},
-{d:"Domain 5",q:"Which combination detects hallucinations and improves accuracy?",o:["Bigger model + higher temp","RAG grounding, output validation, and confidence scoring","Remove guardrails","Only zero-shot prompts"],a:1,e:"Layer: RAG grounding (facts) + output validation (check claims) + confidence scoring (flag uncertainty)."},
-{d:"Domain 5",q:"Data lineage in AI governance means:",o:["Row count","Tracking data origin, movement, and transformation for traceability and compliance","Transfer speed","File format"],a:1,e:"Data lineage: where data came from, how transformed, where it goes. Enables compliance and source citation."},
-{d:"Domain 5",q:"Match governance services: CloudTrail=? Audit Manager=? Artifact=? Config=?",o:["CloudTrail=API logging, Audit Manager=evidence collection, Artifact=compliance reports, Config=configuration compliance","All do the same thing","CloudTrail=compliance, Audit Manager=logging, Artifact=config, Config=reports","CloudTrail=reports, Audit Manager=config, Artifact=logging, Config=evidence"],a:0,e:"CloudTrail=logs API calls. Audit Manager=automates evidence. Artifact=compliance reports. Config=configuration rules."},
-{d:"Domain 5",q:"Generative AI Security Scoping Matrix is:",o:["Hardware chart","Governance framework to assess/categorize GenAI security requirements by risk level","Network diagram","Pricing calculator"],a:1,e:"Helps determine security controls, review cadence, and compliance requirements based on app sensitivity."},
-{d:"Domain 5",q:"AWS Shared Responsibility for Bedrock:",o:["AWS handles everything","AWS secures infrastructure/platform; customers handle data, access controls, guardrails, and compliance","Customers handle hardware","Third party manages all"],a:1,e:"AWS: infrastructure, platform. Customer: IAM, data classification, guardrails config, PII, regulatory compliance."},
-{d:"Domain 5",q:"Private connectivity to Bedrock without public internet:",o:["Internet Gateway","AWS PrivateLink (VPC endpoints)","NAT Gateway","CloudFront"],a:1,e:"PrivateLink = private VPC-to-Bedrock connection. Traffic stays on AWS network. Required for many compliance frameworks."},
-{d:"Domain 5",q:"Which governance strategy addresses WHERE data is physically stored for regulations?",o:["Data augmentation","Data residency","Data normalization","Data sharding"],a:1,e:"Data residency = geographic storage requirements (GDPR, sovereignty). Includes logging, retention, monitoring."}
-];
-let cur=0,ans=Array(Q.length).fill(null),revealed=Array(Q.length).fill(false);
+let Q=[],cur=0,ans=[],revealed=[];
+fetch('questions.json').then(r=>r.json()).then(data=>{
+Q=data;ans=Array(Q.length).fill(null);revealed=Array(Q.length).fill(false);
+document.getElementById('tot').textContent=Q.length;render();
+}).catch(()=>{document.getElementById('area').innerHTML='<div class="loading">Error loading questions.json</div>';});
 function render(){
+if(!Q.length)return;
 let q=Q[cur];
-let h=`<div class="card"><div class="dom">${q.d}</div><div class="qtext">Q${cur+1}. ${q.q}</div>`;
+let h='<div class="card"><div class="dom">'+q.d+'</div><div class="qtext">Q'+(cur+1)+'. '+q.q+'</div>';
 let multi=Array.isArray(q.a);
 q.o.forEach((o,i)=>{
-let cls="opt";
+let cls='opt';
 if(revealed[cur]){
-if(multi){if(q.a.includes(i))cls+=" correct";else if(ans[cur]&&ans[cur].includes(i))cls+=" wrong";}
-else{if(i===q.a)cls+=" correct";else if(ans[cur]===i)cls+=" wrong";}
+if(multi){if(q.a.includes(i))cls+=' correct';else if(ans[cur]&&ans[cur].includes(i))cls+=' wrong';}
+else{if(i===q.a)cls+=' correct';else if(ans[cur]===i)cls+=' wrong';}
 }else{
-if(multi&&ans[cur]&&ans[cur].includes(i))cls+=" sel";
-else if(!multi&&ans[cur]===i)cls+=" sel";
+if(multi&&ans[cur]&&ans[cur].includes(i))cls+=' sel';
+else if(!multi&&ans[cur]===i)cls+=' sel';
 }
-h+=`<div class="${cls}" onclick="pick(${i})">${String.fromCharCode(65+i)}. ${o}</div>`;
+h+='<div class="'+cls+'" onclick="pick('+i+')">'+String.fromCharCode(65+i)+'. '+o+'</div>';
 });
-h+=`<div class="exp${revealed[cur]?' show':''}">${q.e}</div></div>`;
-document.getElementById("area").innerHTML=h;
-document.getElementById("qn").textContent=cur+1;
-document.getElementById("pb").style.width=((cur+1)/Q.length*100)+"%";
-document.getElementById("prev").disabled=cur===0;
-document.getElementById("next").textContent=cur===Q.length-1?"Finish":"Next";
+h+='<div class="exp'+(revealed[cur]?' show':'')+'">'+q.e+'</div></div>';
+document.getElementById('area').innerHTML=h;
+document.getElementById('qn').textContent=cur+1;
+document.getElementById('pb').style.width=((cur+1)/Q.length*100)+'%';
+document.getElementById('prev').disabled=cur===0;
+document.getElementById('next').textContent=cur===Q.length-1?'Finish':'Next';
 let correct=0;Q.forEach((qq,i)=>{if(revealed[i]){let a=qq.a;if(Array.isArray(a)){if(ans[i]&&JSON.stringify([...ans[i]].sort())===JSON.stringify([...a].sort()))correct++;}else{if(ans[i]===a)correct++;}}});
-document.getElementById("sc").textContent=correct+"/"+Q.filter((_,i)=>revealed[i]).length;
+document.getElementById('sc').textContent=correct+'/'+Q.filter((_,i)=>revealed[i]).length;
 }
 function pick(i){
 if(revealed[cur])return;
@@ -155,10 +90,8 @@ cur+=dir;if(cur<0)cur=0;if(cur>=Q.length)cur=Q.length-1;render();
 function showScore(){
 let c=0;Q.forEach((q,i)=>{let a=q.a;if(Array.isArray(a)){if(ans[i]&&JSON.stringify([...ans[i]].sort())===JSON.stringify([...a].sort()))c++;}else{if(ans[i]===a)c++;}});
 let pct=Math.round(c/Q.length*100);
-let pass=pct>=70;
-document.getElementById("area").innerHTML=`<div class="score"><h2>${pass?"PASS":"NEEDS WORK"}</h2><div class="pct">${pct}%</div><div class="detail">${c}/${Q.length} correct | Pass: 70%</div><div style="margin-top:16px"><button class="btn pri" onclick="cur=0;ans=Array(Q.length).fill(null);revealed=Array(Q.length).fill(false);render();">Retry</button></div></div>`;
+document.getElementById('area').innerHTML='<div class="score"><h2>'+(pct>=70?'PASS':'NEEDS WORK')+'</h2><div class="pct">'+pct+'%</div><div class="detail">'+c+'/'+Q.length+' correct | Pass: 70%</div><div style="margin-top:16px"><button class="btn pri" onclick="cur=0;ans=Array(Q.length).fill(null);revealed=Array(Q.length).fill(false);render();">Retry</button></div></div>';
 }
-render();
 </script>
 </body>
 </html>
